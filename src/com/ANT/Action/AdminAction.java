@@ -32,6 +32,7 @@ public class AdminAction extends ActionSupport
                     ServletActionContext.getRequest().getSession().setAttribute("password", password); 
                     msg = "登录成功！";
                     url = "/pages/index.jsp";
+                    System.out.println("在这里多加一些东西");
                 }else{
                     msg = "登录失败，错误的ID或密码!";
                     url = "/login.jsp";
