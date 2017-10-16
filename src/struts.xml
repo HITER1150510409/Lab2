@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC 
+"-//Apache Software Foundation//DTD Struts Configuration 2.1//EN" 
+"http://struts.apache.org/dtds/struts-2.1.dtd 
+
+">
+<struts>
+	<constant name="struts.enable.DynamicMethodInvocation" value="true"></constant> 
+	<constant name="struts.devMode" value="true" />
+	<constant name="struts.locale" value="UTF-8"/>
+	<constant name="struts.i18n.encoding" value="UTF-8"/>
+    <constant name="struts.mapper.alwaysSelectFullNamespace" value="false" />
+	<package name="action" extends="struts-default">
+		<action name="LoginAction" class="com.ANT.Action.AdminAction">
+			<result name="success">/pages/forward.jsp</result>
+		</action>
+		<!-- 增加图书的操作 -->
+		<action name="BookInsert" class="com.ANT.Action.BookAction" method="BooksInsertAction">
+			<result name="success">/pages/forward.jsp</result>
+		</action>
+		<action name="BookList" class="com.ANT.Action.BookAction" method="ListAction">
+			<result name="success">/pages/back/books/books_list.jsp</result>
+		</action>
+		<action name="BookInsertPro" class="com.ANT.Action.BookAction" method="BooksInsertProAction">
+			<result name="success">/pages/back/books/books_insert.jsp</result>
+		</action>
+		<!-- 查询图书详情操作 -->
+		<action name="BooksCheckPro" class="com.ANT.Action.BookAction" method="BooksCheckProAction">
+			<result name="success">/pages/back/books/books_check.jsp</result>
+		</action>
+		<action name="BooksCheck" class="com.ANT.Action.BookAction" method="BooksCheckAction">
+			<result name="success">/pages/back/books/books_list.jsp</result>
+		</action>
+		<!-- 增加作者操作 -->
+		<action name="AuthorInsert" class="com.ANT.Action.AuthorAction" method="AuthorInsertAction">
+			<result name="success">/pages/forward.jsp</result>
+		</action>
+		<!-- 查询作者的作品 -->
+		<action name="AuthorCheckPro" class="com.ANT.Action.BookAction" method="BooksInsertProAction">
+			<result name="success">/pages/back/author/author_check.jsp</result>
+		</action>
+		<action name="FindBooks" class="com.ANT.Action.BookAction" method="FindBooksAction">
+			<result name="success">/pages/back/author/author_check_display.jsp</result>
+		</action>
+		<!-- 删除图书的操作 -->
+		<action name="BooksDeletePro" class="com.ANT.Action.BookAction" method="BooksCheckProAction">
+			<result name="success">/pages/back/books/books_delete.jsp</result>
+		</action>
+		<action name="BooksDelete" class="com.ANT.Action.BookAction" method="BooksDeleteAction">
+			<result name="success">/pages/forward.jsp</result>
+		</action>
+		<!-- 更新图书信息的操作 -->
+		<action name="BooksUpdatePro" class="com.ANT.Action.BookAction" method="BooksUpdateProAction">
+			<result name="success">/pages/back/books/books_update.jsp</result>
+		</action>
+		<action name="BooksUpdate" class="com.ANT.Action.BookAction" method="BooksUpdateAction">
+			<result name="success">/pages/forward.jsp</result>
+		</action>
+	</package>	
+</struts>
